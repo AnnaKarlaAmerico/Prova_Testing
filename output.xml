@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211210 19:14:14.839" rpa="false" schemaversion="2">
+<suite id="s1" name="Chico" source="C:\Users\annaa\OneDrive\Área de Trabalho\CTD DH\Bimestre 2\Testing\Prova\Chico.robot">
+<test id="s1-t1" name="Processo de compra de uma camiseta &quot;Vira lata caramelo&quot; no site do Chico Rei">
+<kw name="Abrir o site da loja Chico Rei" library="Chico" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SITE}</arg>
+<arg>${NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211210 19:14:19.212" level="INFO">Opening browser 'chrome' to base url 'https://chicorei.com/'.</msg>
+<status status="PASS" starttime="20211210 19:14:19.204" endtime="20211210 19:14:41.926"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211210 19:14:41.927" endtime="20211210 19:14:44.797"/>
+</kw>
+<status status="PASS" starttime="20211210 19:14:19.193" endtime="20211210 19:14:44.798"/>
+</kw>
+<kw name="Clicar em &quot;Concordar&quot; no aviso sobre Cookies" library="Chico">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${COOKIES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211210 19:14:44.804" level="INFO">Clicking element 'css=#confirmPolicyButton'.</msg>
+<status status="PASS" starttime="20211210 19:14:44.802" endtime="20211210 19:14:52.390"/>
+</kw>
+<status status="PASS" starttime="20211210 19:14:44.800" endtime="20211210 19:14:52.391"/>
+</kw>
+<kw name="Pesquisar por &quot;Vira lata caramelo&quot; e selecionar a primeira opção da lista de resultados" library="Chico">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${BUSCA}</arg>
+<arg>${CARAMELO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211210 19:14:52.398" level="INFO">Typing text 'Vira lata caramelo' into text field 'css=#header-search-input-desktop'.</msg>
+<status status="PASS" starttime="20211210 19:14:52.396" endtime="20211210 19:14:53.754"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211210 19:14:58.762" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211210 19:14:53.755" endtime="20211210 19:14:58.763"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CAMISETA1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211210 19:14:58.767" level="INFO">Clicking element 'css=#header-search-desktop &gt; form &gt; div &gt; div &gt; div &gt; div:nth-child(1) &gt; div &gt; div:nth-child(2) &gt; div.product-list-item-title'.</msg>
+<status status="PASS" starttime="20211210 19:14:58.764" endtime="20211210 19:15:18.012"/>
+</kw>
+<status status="PASS" starttime="20211210 19:14:52.394" endtime="20211210 19:15:18.013"/>
+</kw>
+<kw name="Validar se o valor do produto é &quot;R$ 69,90&quot;" library="Chico">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>R$ 69,90</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20211210 19:15:23.019" level="INFO">Current page contains text 'R$ 69,90'.</msg>
+<status status="PASS" starttime="20211210 19:15:18.028" endtime="20211210 19:15:23.020"/>
+</kw>
+<status status="PASS" starttime="20211210 19:15:18.027" endtime="20211210 19:15:23.020"/>
+</kw>
+<kw name="Selecionar um tamanho, cor e clicar em comprar" library="Chico">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TAMANHO1}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211210 19:15:23.024" endtime="20211210 19:15:23.305"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TAMANHO1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211210 19:15:23.307" level="INFO">Clicking element 'css=#product-variations &gt; div.text-yanone &gt; div &gt; div:nth-child(4) &gt; nav &gt; div:nth-child(2)'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211210 19:15:25.649" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211210 19:15:24.959" endtime="20211210 19:15:25.650"/>
+</kw>
+<msg timestamp="20211210 19:15:25.836" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (748, 729)
+  (Session info: chrome=96.0.4664.93)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00DE6903+2517251]
+	Ordinal0 [0x00D7F8E1+2095329]
+	Ordinal0 [0x00C82848+1058888]
+	Ordinal0 [0x00CB3509+1258761]
+	Ordinal0 [0x00CB1868+1251432]
+	Ordinal0 [0x00CAF65D+1242717]
+	Ordinal0 [0x00CAE4A8+1238184]
+	Ordinal0 [0x00CA4037+1196087]
+	Ordinal0 [0x00CC64D3+1336531]
+	Ordinal0 [0x00CA3A36+1194550]
+	Ordinal0 [0x00CC65BA+1336762]
+	Ordinal0 [0x00CD5BBF+1399743]
+	Ordinal0 [0x00CC639B+1336219]
+	Ordinal0 [0x00CA27A7+1189799]
+	Ordinal0 [0x00CA3609+1193481]
+	GetHandleVerifier [0x00F75904+1577972]
+	GetHandleVerifier [0x01020B97+2279047]
+	GetHandleVerifier [0x00E76D09+534521]
+	GetHandleVerifier [0x00E75DB9+530601]
+	Ordinal0 [0x00D84FF9+2117625]
+	Ordinal0 [0x00D898A8+2136232]
+	Ordinal0 [0x00D899E2+2136546]
+	Ordinal0 [0x00D93541+2176321]
+	BaseThreadInitThunk [0x75A4FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77A57A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77A57A6E+238]
+</msg>
+<status status="FAIL" starttime="20211210 19:15:23.306" endtime="20211210 19:15:25.837"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${COR1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211210 19:15:25.839" endtime="20211210 19:15:25.839"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${COMPRAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211210 19:15:25.839" endtime="20211210 19:15:25.840"/>
+</kw>
+<status status="FAIL" starttime="20211210 19:15:23.022" endtime="20211210 19:15:25.843"/>
+</kw>
+<kw name="Fechar o navegador" library="Chico" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211210 19:15:25.935" endtime="20211210 19:15:38.483"/>
+</kw>
+<status status="PASS" starttime="20211210 19:15:25.910" endtime="20211210 19:15:38.484"/>
+</kw>
+<status status="FAIL" starttime="20211210 19:14:19.174" endtime="20211210 19:15:38.485">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (748, 729)
+  (Session info: chrome=96.0.4664.93)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00DE6903+2517251]
+	Ordinal0 [0x00D7F8E1+2095329]
+	Ordinal0 [0x00C82848+1058888]
+	Ordinal0 [0x00CB3509+1258761]
+	Ordinal0 [0x00CB1868+1251432]
+	Ordinal0 [0x00CAF65D+1242717]
+	Ordinal0 [0x00CAE4A8+1238184]
+	Ordinal0 [0x00CA4037+1196087]
+	Ordinal0 [0x00CC64D3+1336531]
+	Ordinal0 [0x00CA3A36+1194550]
+	Ordinal0 [0x00CC65BA+1336762]
+	Ordinal0 [0x00CD5BBF+1399743]
+	Ordinal0 [0x00CC639B+1336219]
+	Ordinal0 [0x00CA27A7+1189799]
+	Ordinal0 [0x00CA3609+1193481]
+	GetHandleVerifier [0x00F75904+1577972]
+	GetHandleVerifier [0x01020B97+2279047]
+	GetHandleVerifier [0x00E76D09+534521]
+	GetHandleVerifier [0x00E75DB9+530601]
+	Ordinal0 [0x00D84FF9+2117625]
+	Ordinal0 [0x00D898A8+2136232]
+	Ordinal0 [0x00D899E2+2136546]
+	Ordinal0 [0x00D93541+2176321]
+	BaseThreadInitThunk [0x75A4FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77A57A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77A57A6E+238]
+</status>
+</test>
+<status status="FAIL" starttime="20211210 19:14:14.875" endtime="20211210 19:15:38.510"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Chico">Chico</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
